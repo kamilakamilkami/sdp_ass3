@@ -8,7 +8,6 @@ public class Main2 {
         invoker.setCommand(printcommand);
         invoker.executeCommand();
 
-
         invoker.setCommand(savecommand);
         invoker.executeCommand();
 
