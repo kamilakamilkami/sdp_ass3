@@ -3,31 +3,25 @@ public class TaskProcessingSystem {
     private TaskList taskList;
 
     public TaskProcessingSystem() {
-        // Initialize Mediator
+
         mediater = new TaskMediater();
 
-        // Initialize Handlers
         TaskHandler low = new LowPriorityHandler();
         TaskHandler medium = new MediumPriorityHandler();
         TaskHandler high = new HigherPriorityHandler();
 
-        // Set up the chain
         low.setNextHandler(medium);
         medium.setNextHandler(high);
 
-        // Set Mediator for Handlers
+
         low.setMediater(mediater);
         medium.setMediater(mediater);
         high.setMediater(mediater);
 
-        // Initialize Invoker
         TaskInvoker invoker = new TaskInvoker();
         mediater.setInvoker(invoker);
-
-        // Set Mediator's Handler
         mediater.setHandler(low);
 
-        // Initialize Task List
         taskList = new TaskList();
     }
 
