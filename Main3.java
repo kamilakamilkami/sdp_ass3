@@ -2,7 +2,6 @@ public class Main3 {
     public static void main(String[] args) {
         TaskMediater mediator = new TaskMediater();
 
-
         TaskHandler low = new LowPriorityHandler();
         TaskHandler medium = new MediumPriorityHandler();
         TaskHandler high = new HigherPriorityHandler();
